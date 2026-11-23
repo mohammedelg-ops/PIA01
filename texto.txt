@@ -1,0 +1,7 @@
+La inteligencia artificial está cada vez más presente en las empresas. Para trabajar con ella, Python es el lenguaje más usado, aunque también se usan R, Java u Octave.
+
+Con Python se pueden preparar los datos, entrenar un modelo y ver los resultados. Los datos son la parte más importante: si los datos están mal, el modelo también lo estará.
+
+El aprendizaje automático es una rama de la inteligencia artificial. ¿Por qué se usa tanto Python? Porque tiene muchas librerías, una comunidad muy grande y es fácil de aprender.
+
+Plataformas como Kaggle permiten practicar con datos reales, participar en competiciones y comparar tu modelo con el de otras personas. ¡Es una buena forma de aprender!
