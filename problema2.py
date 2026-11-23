@@ -4,13 +4,12 @@ import string
 
 
 def frecuencia_palabras(palabras, ruta):
-    # Leer el fichero y pasar todo a minusculas
+    # Leer el fichero y pasarlo a minusculas
     with open(ruta, "r", encoding="utf-8") as fichero:
         texto = fichero.read().lower()
 
-    # Quitar los signos de puntuacion (tambien los del español)
-    signos = string.punctuation + "¿¡«»"
-    for signo in signos:
+    # Quitar los signos de puntuacion (tambien ¿ y ¡)
+    for signo in string.punctuation + "¿¡":
         texto = texto.replace(signo, " ")
 
     lista_texto = texto.split()
@@ -21,18 +20,18 @@ def frecuencia_palabras(palabras, ruta):
         palabra = palabra.lower()
         frecuencias[palabra] = lista_texto.count(palabra)
 
-    # Devolver el diccionario ordenado por la palabra
+    # Ordenar por la palabra
     return dict(sorted(frecuencias.items()))
 
 
 # Programa de prueba
+# (texto.txt tiene que estar en la misma carpeta que este fichero)
 carpeta = os.path.dirname(os.path.abspath(__file__))
-ruta_fichero = os.path.join(carpeta, "texto.txt")
+ruta = os.path.join(carpeta, "texto.txt")
 
 palabras_buscar = ["python", "datos", "inteligencia", "modelo", "aprendizaje", "java"]
+resultado = frecuencia_palabras(palabras_buscar, ruta)
 
-resultado = frecuencia_palabras(palabras_buscar, ruta_fichero)
-
-print("Frecuencia de las palabras en", "texto.txt")
+print("Frecuencia de las palabras en texto.txt:")
 for palabra, veces in resultado.items():
-    print(palabra, ":", veces)
+    print(f"{palabra}: {veces}")
